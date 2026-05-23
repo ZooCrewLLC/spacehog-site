@@ -6,6 +6,7 @@
 <title>SpaceHog by ZooCrew -- find what's eating your disk</title>
 <link rel="icon" href="SpaceHog.png">
 <link rel="apple-touch-icon" href="SpaceHog.png">
+<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
 <meta name="description" content="A fast disk space analyzer for Windows, Mac, and Linux. Single binary. No install. No nonsense. Buy once, own forever.">
 <meta property="og:title" content="SpaceHog by ZooCrew -- find what's eating your disk">
 <meta property="og:description" content="A fast disk space analyzer for Windows, Mac, and Linux. Single binary. No install. No nonsense.">
@@ -608,7 +609,8 @@
         A single tiny binary. No installer, no nonsense.
       </p>
       <div class="cta-row">
-        <span class="btn btn-primary" style="cursor:default;opacity:0.85;">Coming Soon</span>
+        <a href="https://zoocrew.lemonsqueezy.com/checkout/buy/e55c2b62-1dbf-45ff-acb5-441f5769096d?embed=1"
+           class="lemonsqueezy-button btn btn-primary">Buy SpaceHog — $9</a>
         <a href="#how" class="btn btn-ghost">See how it works</a>
         <span class="price-tag"><strong>$9</strong> · buy once, own forever</span>
       </div>
@@ -625,7 +627,8 @@
 <section class="stats">
   <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
     <span style="font-size:1.5rem;font-weight:700;color:var(--paper);">$9 <span style="font-size:1rem;color:var(--muted);font-weight:400;">one-time, forever</span></span>
-    <span class="btn btn-primary" style="font-size:0.95rem;cursor:default;opacity:0.85;">Coming Soon</span>
+    <a href="https://zoocrew.lemonsqueezy.com/checkout/buy/e55c2b62-1dbf-45ff-acb5-441f5769096d?embed=1"
+       class="lemonsqueezy-button btn btn-primary" style="font-size:0.95rem;">Buy SpaceHog — $9</a>
   </div>
 </section>
 
@@ -734,7 +737,8 @@
       <div class="price-card">
         <div class="amount"><span class="currency">$</span>9</div>
         <div class="terms">one-time payment · USD</div>
-        <span class="btn btn-primary" style="cursor:default;opacity:0.85;">Coming Soon</span>
+        <a href="https://zoocrew.lemonsqueezy.com/checkout/buy/e55c2b62-1dbf-45ff-acb5-441f5769096d?embed=1"
+           class="lemonsqueezy-button btn btn-primary">Buy SpaceHog — $9</a>
       </div>
     </div>
   </div>
@@ -812,6 +816,16 @@
   document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('buy') === 'true') {
+      const button = document.querySelector('.lemonsqueezy-button');
+      if (button) {
+        setTimeout(() => button.click(), 500);
+      }
+    }
+  });
 </script>
 
 </body>
