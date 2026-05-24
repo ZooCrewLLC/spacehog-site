@@ -575,6 +575,37 @@
     .download-group { width: 100%; }
     .download-group .btn { flex: 1; padding: 14px 8px; justify-content: center; }
   }
+
+  /* ============ Newsletter signup ============ */
+  .hero-newsletter { margin-top: 20px; }
+  .hero-newsletter form { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .hero-newsletter input[type="email"] {
+    flex: 1 1 200px;
+    max-width: 260px;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--navy-2);
+    color: var(--paper);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .hero-newsletter input[type="email"]::placeholder { color: var(--muted); }
+  .hero-newsletter input[type="email"]:focus { border-color: var(--hog-pink); }
+  .hero-newsletter button {
+    padding: 10px 20px;
+    background: var(--hog-pink);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .hero-newsletter button:hover { background: var(--hog-pink-bright); }
+  .hero-newsletter-note { font-size: 12px; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -615,6 +646,16 @@
       </div>
       <div style="margin-top:14px;font-size:13px;color:var(--muted);">
         14-day free trial · no credit card needed · <a href="https://zoocrew.lemonsqueezy.com/checkout/buy/e55c2b62-1dbf-45ff-acb5-441f5769096d?embed=1" class="lemonsqueezy-button" style="color:var(--hog-pink);text-decoration:none;">buy direct — $9</a> if you already know
+      </div>
+      <div class="hero-newsletter">
+        <form id="bd-form-spacehog" data-bd-ok="bd-ok-spacehog"
+              action="https://buttondown.com/api/emails/embed-subscribe/zoocrew" method="post">
+          <input type="hidden" name="tag" value="spacehog-landing">
+          <input type="email" name="email" id="bd-email-spacehog" placeholder="your@email.com" required>
+          <button type="submit">Get launch updates</button>
+        </form>
+        <p id="bd-ok-spacehog" style="display:none;font-size:13px;color:var(--muted);margin-bottom:6px;">Check your email to confirm your subscription.</p>
+        <p class="hero-newsletter-note">Occasional emails when a new app ships. No spam.</p>
       </div>
     </div>
 
@@ -857,6 +898,15 @@
         setTimeout(() => button.click(), 500);
       }
     }
+  });
+
+  document.querySelectorAll('form[data-bd-ok]').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' }).catch(function() {});
+      form.style.display = 'none';
+      document.getElementById(form.dataset.bdOk).style.display = '';
+    });
   });
 </script>
 
