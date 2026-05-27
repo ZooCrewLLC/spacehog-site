@@ -576,14 +576,14 @@
     .download-group .btn { flex: 1; padding: 14px 8px; justify-content: center; }
   }
 
-  /* ============ Newsletter signup ============ */
-  .hero-newsletter { margin-top: 20px; }
-  .hero-newsletter form { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
-  .hero-newsletter input[type="email"] {
+  /* ============ Footer newsletter ============ */
+  .footer-newsletter { margin-bottom: 20px; text-align: center; }
+  .footer-newsletter form { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .footer-newsletter input[type="email"] {
     flex: 1 1 200px;
     max-width: 260px;
     padding: 10px 16px;
-    border: 1px solid var(--line);
+    border: 1px solid var(--line-strong);
     border-radius: 8px;
     background: var(--navy-2);
     color: var(--paper);
@@ -591,12 +591,12 @@
     outline: none;
     transition: border-color 0.2s;
   }
-  .hero-newsletter input[type="email"]::placeholder { color: var(--muted); }
-  .hero-newsletter input[type="email"]:focus { border-color: var(--hog-pink); }
-  .hero-newsletter button {
+  .footer-newsletter input[type="email"]::placeholder { color: var(--muted); }
+  .footer-newsletter input[type="email"]:focus { border-color: var(--hog-pink); }
+  .footer-newsletter button {
     padding: 10px 20px;
     background: var(--hog-pink);
-    color: #fff;
+    color: var(--ink);
     border: none;
     border-radius: 8px;
     font-weight: 700;
@@ -604,8 +604,8 @@
     cursor: pointer;
     transition: background 0.2s;
   }
-  .hero-newsletter button:hover { background: var(--hog-pink-bright); }
-  .hero-newsletter-note { font-size: 12px; color: var(--muted); }
+  .footer-newsletter button:hover { background: var(--hog-pink-bright); }
+  .footer-newsletter-note { font-size: 12px; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -646,16 +646,6 @@
       </div>
       <div style="margin-top:14px;font-size:13px;color:var(--muted);">
         14-day free trial · no credit card needed · <a href="https://zoocrew.lemonsqueezy.com/checkout/buy/e55c2b62-1dbf-45ff-acb5-441f5769096d?embed=1" class="lemonsqueezy-button" style="color:var(--hog-pink);text-decoration:none;">buy direct — $9</a> if you already know
-      </div>
-      <div class="hero-newsletter">
-        <form id="bd-form-spacehog" data-bd-ok="bd-ok-spacehog"
-              action="https://buttondown.com/api/emails/embed-subscribe/zoocrew" method="post">
-          <input type="hidden" name="tag" value="spacehog-landing">
-          <input type="email" name="email" id="bd-email-spacehog" placeholder="your@email.com" required>
-          <button type="submit">Get launch updates</button>
-        </form>
-        <p id="bd-ok-spacehog" style="display:none;font-size:13px;color:var(--muted);margin-bottom:6px;">Check your email to confirm your subscription.</p>
-        <p class="hero-newsletter-note">Occasional emails when a new app ships. No spam.</p>
       </div>
     </div>
 
@@ -853,17 +843,29 @@
 
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="container row">
-    <div>© 2026 ZooCrew LLC</div>
-    <div>
-      <a href="https://zoocrew.llc">ZooCrew</a>
-      <a href="mailto:support@zoocrew.llc">Support</a>
-      <a href="https://zoocrew.llc/privacy-policy.html">Privacy Policy</a>
-      <a href="https://zoocrew.llc/terms-of-service.html">Terms of Service</a>
-      <a href="https://zoocrew.llc/refund-policy.html">Refund Policy</a>
-      <a href="https://bsky.app/profile/zoocrewllc.bsky.social" aria-label="Bluesky" style="display:inline-flex;align-items:center;margin-left:20px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568 501" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-201.209C491.866-1.611 568-28.906 568 57.947c0 17.346-9.945 145.713-15.778 166.555-20.275 72.453-94.155 90.933-159.875 79.748C507.222 323.8 536.444 388.56 473.333 453.32c-119.86 122.992-172.272-30.859-185.702-70.281-2.462-7.227-3.614-10.608-3.631-7.733-.017-2.875-1.169.506-3.631 7.733-13.43 39.422-65.842 193.273-185.702 70.281-63.111-64.76-33.889-129.52 80.986-149.07-65.72 11.185-139.6-7.295-159.875-79.748C9.945 203.66 0 75.293 0 57.947 0-28.906 76.135-1.611 123.121 33.664Z"/></svg>
-      </a>
+  <div class="container">
+    <div class="footer-newsletter">
+      <form id="bd-form-spacehog" data-bd-ok="bd-ok-spacehog"
+            action="https://buttondown.com/api/emails/embed-subscribe/zoocrew" method="post">
+        <input type="hidden" name="tag" value="spacehog-landing">
+        <input type="email" name="email" id="bd-email-spacehog" placeholder="your@email.com" required>
+        <button type="submit">Get launch updates</button>
+      </form>
+      <p id="bd-ok-spacehog" style="display:none;font-size:13px;color:var(--muted);margin-bottom:6px;">Check your email to confirm your subscription.</p>
+      <p class="footer-newsletter-note">Occasional emails when a new app ships. No spam.</p>
+    </div>
+    <div class="row" style="border-top:1px solid var(--line);padding-top:20px;">
+      <div>© 2026 ZooCrew LLC</div>
+      <div>
+        <a href="https://zoocrew.llc">ZooCrew</a>
+        <a href="mailto:support@zoocrew.llc">Support</a>
+        <a href="https://zoocrew.llc/privacy-policy.html">Privacy Policy</a>
+        <a href="https://zoocrew.llc/terms-of-service.html">Terms of Service</a>
+        <a href="https://zoocrew.llc/refund-policy.html">Refund Policy</a>
+        <a href="https://bsky.app/profile/zoocrewllc.bsky.social" aria-label="Bluesky" style="display:inline-flex;align-items:center;margin-left:20px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568 501" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-201.209C491.866-1.611 568-28.906 568 57.947c0 17.346-9.945 145.713-15.778 166.555-20.275 72.453-94.155 90.933-159.875 79.748C507.222 323.8 536.444 388.56 473.333 453.32c-119.86 122.992-172.272-30.859-185.702-70.281-2.462-7.227-3.614-10.608-3.631-7.733-.017-2.875-1.169.506-3.631 7.733-13.43 39.422-65.842 193.273-185.702 70.281-63.111-64.76-33.889-129.52 80.986-149.07-65.72 11.185-139.6-7.295-159.875-79.748C9.945 203.66 0 75.293 0 57.947 0-28.906 76.135-1.611 123.121 33.664Z"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </footer>
