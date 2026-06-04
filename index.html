@@ -640,7 +640,7 @@
         A single tiny binary. No installer, no nonsense. Try it free for 14 days.
       </p>
       <div class="cta-row">
-        <span class="btn btn-primary" style="opacity:0.55;cursor:default;" title="Download coming soon">Download Free Trial</span>
+        <a href="#download" class="btn btn-primary">Download Free Trial</a>
         <a href="https://zoocrew.lemonsqueezy.com/checkout/buy/e55c2b62-1dbf-45ff-acb5-441f5769096d?embed=1"
            class="lemonsqueezy-button btn btn-ghost">Buy Now — $9</a>
       </div>
@@ -781,28 +781,32 @@
 </section>
 
 <!-- ============ DOWNLOAD ============ -->
+<!-- Update version + filenames on each release.  GitHub /releases/latest/
+     redirects no longer host non-versioned filenames, so each new version
+     needs the URL refreshed here. -->
 <section class="block" id="download" style="padding-top:0;">
   <div class="container">
     <div style="background:var(--navy-3);border:1px solid var(--line-strong);border-radius:12px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
       <div>
-        <div style="font-size:18px;font-weight:600;margin-bottom:6px;">Download the free trial</div>
-        <div style="font-size:14px;color:var(--muted);">14 days, full app, no credit card. Windows · macOS · Linux.</div>
+        <div style="font-size:18px;font-weight:600;margin-bottom:6px;">Download the free trial — v1.0.6</div>
+        <div style="font-size:14px;color:var(--muted);">14 days, full app, no credit card.</div>
       </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;opacity:0.45;pointer-events:none;" title="Downloads coming soon">
-        <span class="btn btn-ghost" style="cursor:default;">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <a class="btn btn-ghost" href="https://github.com/ZooCrewLLC/SpaceHog-releases/releases/download/v1.0.6/spacehog-1.0.6-windows-x86_64.zip">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
           Windows
-        </span>
-        <span class="btn btn-ghost" style="cursor:default;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 8v8M8 12l4 4 4-4"/></svg>
-          macOS
-        </span>
-        <span class="btn btn-ghost" style="cursor:default;">
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/ZooCrewLLC/SpaceHog-releases/releases/download/v1.0.6/spacehog-1.0.6-linux-x86_64.zip">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 19h20L12 2z"/><path d="M12 10v5M12 17v.5"/></svg>
           Linux
+        </a>
+        <span class="btn btn-ghost" style="opacity:0.55;cursor:default;" title="macOS build pending Apple Developer Program enrollment">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 8v8M8 12l4 4 4-4"/></svg>
+          macOS
+          <span style="font-size:11px;background:var(--hog-pink);color:var(--ink);padding:2px 8px;border-radius:999px;font-weight:600;letter-spacing:0.04em;margin-left:4px;">Coming soon</span>
         </span>
       </div>
-      <div style="width:100%;font-size:12px;color:var(--muted);margin-top:-16px;">Downloads available soon — pending Apple Developer signing.</div>
+      <div style="width:100%;font-size:12px;color:var(--muted);">macOS build is paused while Apple Developer Program enrollment completes — sign up for launch updates below to hear when it ships.</div>
     </div>
   </div>
 </section>
